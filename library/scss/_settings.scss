@@ -1,0 +1,43 @@
+/* =================================================================================================
+SETTINGS (_settings.scss)
+================================================================================================= */
+
+// PAGE
+$columns_amount:	    		12;  	// Amount of columns
+$gutWidth:       		        33.3%; 	// The total width of gutters (whitespace between columns)
+$page_max_width:	    		960px; 	// Maximum width of .wrap
+$page_padding:          		20px; 	// Padding of .wrap
+$page_width:					100%; 	// Width of .wrap
+$margin:						20px;	// Standard margin
+$padding: 						30px;	// Standard padding
+$row_height:                 	40px;	// Standard object row height
+$rounded:                		4px;	// Standrad roundness of border-radius mixin
+
+// COLORS
+$black: 						#333333;
+$gray:							#CCC;
+$green:							#76E075;
+$red:							#D85E5C;
+$white:							#FFFFFF;
+$yellow:						#ffe44b;
+
+$body_background:				#F0F0F0;
+$button_color:					#00BBD1;
+$menu_color:        			$black;
+$link_color:           			#E14B56;
+
+// Create classes for background and text colors
+$color_classes:(				('black', $black),
+								('gray', $gray),
+								('green', $green),
+								('red', $red),
+								('yellow', $yellow),
+								('white', $white));
+
+// FONTS
+$body_text:         			Helvetica, Arial, sans-serif;
+$font_size:         			100%;
+$font_weight:       			300;
+$heading_spacing:   			0.03em;
+$heading_text:      			Georgia, Times, serif;
+$line_height:       			1.4em;

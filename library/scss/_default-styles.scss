@@ -1,0 +1,103 @@
+/* =================================================================================================
+DEFAULT CLASSES (_default_style.scss)
+================================================================================================= */
+
+.first { margin-left: 0; }
+
+.fl { float: left; }
+
+.fr, .last { float: right; }
+
+.clearfix { clear: both; }
+
+.overflow-hidden { overflow: hidden; }
+
+.center {
+	float: none;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wrap {
+  	margin: 0 auto; // auto for centering
+  	max-width: $page_max_width + $page_padding;
+  	overflow: hidden;
+  	padding: 0 $page_padding;
+  	width: $page_width;
+  	@include transition();
+
+  	&.slide-wrap {
+  		left: -100%;
+  		position: relative;
+  	}
+}
+
+input, textarea, select{
+    border: 1px solid $gray;
+    font-family: $body_text;
+    font-size: 1em;
+    font-weight: $font_weight;
+    height: $row_height;
+    line-height: $row_height;
+    padding: 0 $margin/2;
+    @include border-radius();
+}
+
+input[type="submit"], button, .button {
+    background: $button_color;
+    border: 1px solid darken($button_color, 10%);
+    color: $white;
+    cursor: pointer;
+    font-size: 1.1em;
+    height: $row_height;
+    text-align: center;
+	@include border-radius();
+	@include box-shadow(inset 0, 1px, 0, lighten($button_color, 10%));
+
+	&:hover {
+		background: darken($button_color, 5%);
+	}
+	&:active {
+		background: darken($button_color, 10%);
+		box-shadow: inset 0 1px 0 darken($button_color, 15%);
+		line-height: 37px;
+	}
+}
+
+img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+
+.table { display: table; }
+.cell {
+    display: table-cell;
+    float: none;
+}
+.round {
+	@include border-radius(50%, 50%, 50%, 50%);
+}
+.rounded {
+    @include border-radius();
+}
+
+.fa { // Stop font awsome icons from getting selected
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+// Create background and text color classes
+// Set thoose classes in _settings.scss
+@for $i from 0 to length($color_classes) {
+	$thisColor: unquote(nth($color_classes, $i+1));
+	$name: nth($thisColor, 1);
+	$value: nth($thisColor, 2);
+	.bg-#{$name} {
+    	background-color: $value;
+	}
+	.color-#{$name} {
+    	color: $value;
+	}
+}

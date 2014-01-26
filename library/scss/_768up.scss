@@ -1,0 +1,93 @@
+/* =================================================================================================
+768 PIXELS & UP (_768up.scss)
+================================================================================================= */
+
+
+/******************************************************************
+MENU
+******************************************************************/
+
+#menu-wrap {
+	background: $menu_color;
+
+	#menu-icon {
+		display: none;
+
+	    &.fixed-icon {}
+	}
+
+	nav#menu {
+		margin: 0 auto;
+        max-width: $page_max_width;
+        position: static;
+        width: $page_width;
+
+	    &.slide-menu {}
+
+	    header {
+	    	display: none;
+
+	        h3 {}
+	    }
+
+	    ul {
+
+	        li {
+	            display: inline;
+                float: left;
+                width: auto;
+
+	            a {
+					border: none;
+                    padding: $padding/2 $padding;
+                    width: auto;
+
+	                &.current_page_item {}
+	                &:active, &:hover {}
+	            }
+
+	            &:first-child {
+                    a {
+                        border-top: none;
+                    }
+                }
+	            &:last-child {
+
+	                a {
+	                	border-bottom: none;
+	                }
+	            }
+	        }
+	    }
+	}
+}
+
+
+/******************************************************************
+LAYOUT
+******************************************************************/
+
+header {
+
+	h1#logo {
+
+        img {}
+	}
+
+    h3 { }
+
+}
+
+main {
+
+	article {
+
+		h1 {}
+
+		p {}
+
+	}
+
+}
+
+footer {}
