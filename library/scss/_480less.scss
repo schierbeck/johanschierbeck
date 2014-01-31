@@ -21,6 +21,10 @@ body {
 	font-weight: $font_weight;
 }
 
+cite {
+	line-height: $line_height;
+}
+
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, p, span, cite { @include word-break(); }
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
@@ -161,7 +165,7 @@ header {
         width: 150px;
 		@include transition();
 
-		&.wayoutwest {
+		&.spin {
 			-moz-transform:rotate(360deg);
 			-webkit-transform:rotate(360deg);
 			-o-transform:rotate(360deg);

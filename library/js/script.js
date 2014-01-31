@@ -1,18 +1,13 @@
 $(document).ready(function() {
 
 	setTimeout(function() {
-		$('#me').removeClass('wayoutwest');
+		$('#me').removeClass('spin');
 	}, 1000);
 
-    $('#menu-icon').on("click", function(){
-
-        $('#menu').toggleClass('slide-menu');
-        $('#menu-icon')
-            .toggleClass('fa-bars')
-            .toggleClass('fa-times')
-            .toggleClass('fixed-icon');
-
-        $('body').toggleClass('overflow-hidden');
+    $('#me').hover(function() {
+        $(this).addClass('spin');
+    }, function() {
+    	$('#me').removeClass('spin');
     });
 
 }); // end of jQuery
