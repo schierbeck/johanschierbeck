@@ -1,0 +1,232 @@
+/* =================================================================================================
+GRID (_grid.scss)
+================================================================================================= */
+
+$gut:           	$columns_amount - 1;
+$gutter_width:   	$gutWidth / $gut;
+
+$col:           	$page_width - $gutWidth;
+$column_width:      $col / $columns_amount;
+
+$guttan: 			($gutter_width / 3) * 2;
+
+$col_plus_gutt:     $column_width + $guttan;
+
+$full_col:      	$gutter_width/2;
+
+$full_width: 0; // Don't you touch!
+
+
+@for $i from 1 through $columns_amount {
+
+  	$width: ($column_width * $i - $gutter_width) + ($gutter_width * $i);
+  	$cols_per_row: $columns_amount / $i; // ex. 12 / 3 = 4
+  	$full_col: $width + ($gutter_width / $cols_per_row) * $cols_per_row - 1;§
+
+
+    .c#{$i} {
+        position: relative;
+        width: 100%;
+    }
+
+    .s-c#{$i}, .m-c#{$i}, .l-c#{$i} {
+		width: 100%;
+    }
+
+    .r#{$i} {
+        min-height: ($row_height * $i) + ($margin * ($i - 1));
+    }
+
+    .stack#{$i} > * {
+        @if $i == $columns_amount {
+        	margin-left: 0;
+        } @else {
+        	margin-left: $gutter_width;
+        }
+        float: left;
+        width: $width;
+    }
+    .stack#{$i} {
+        @if ($columns_amount / $i) < 2 {
+            & > * {
+                float: left;
+                margin-left: 0;
+            }
+        } @else {
+            *:nth-child(#{($columns_amount / $i)}n+1) {
+                margin-left: 0;
+            }
+        }
+    }
+
+    .stack#{$i}.full > * {
+    	width: $page_width / $columns_amount * $i;
+    	margin-left: 0;
+    }
+
+    .xs-c#{$i} {
+		@if $i == $columns_amount {
+            margin-left: 0;
+        } @else {
+            margin-left: $gutter_width;
+        }
+        float: left;
+        width: $width;
+	}
+	.xs-c#{$i}.full {
+      	width: $page_width / $columns_amount * $i;
+      	margin-left: 0;
+  	}
+
+
+} // end @for $i
+
+@for $i from 1 through $columns_amount {
+
+	$width: ($column_width * $i - $gutter_width) + ($gutter_width * $i);
+  	$cols_per_row: $columns_amount / $i; // ex. 12 / 3 = 4
+  	$full_col: $width + ($gutter_width / $cols_per_row) * $cols_per_row - 1;
+
+	@media all and (min-width: 481px) {
+
+		.s-c#{$i} {
+			@if $i == $columns_amount {
+	            margin-left: 0;
+	        } @else {
+	            margin-left: $gutter_width;
+	        }
+	        float: left;
+	        width: $width;
+		}
+		.s-c#{$i}.full {
+	      	width: $page_width / $columns_amount * $i;
+	      	margin-left: 0;
+	  	}
+
+    } // end @media all and (min-width: 481px)
+
+}
+
+@for $i from 1 through $columns_amount {
+
+	$width: ($column_width * $i - $gutter_width) + ($gutter_width * $i);
+  	$cols_per_row: $columns_amount / $i; // ex. 12 / 3 = 4
+  	$full_col: $width + ($gutter_width / $cols_per_row) * $cols_per_row - 1;
+
+	@media all and (min-width: 768px) {
+
+		.c#{$i} {
+            @if $i == $columns_amount {
+                margin-left: 0;
+            } @else {
+                margin-left: $gutter_width;
+            }
+            float: left;
+            width: $width;
+      	}
+
+      	.c#{$i}.full {
+	        width: $page_width / $columns_amount * $i;
+	        margin-left: 0;
+	    }
+
+	    .m-c#{$i} {
+            @if $i == $columns_amount {
+                margin-left: 0;
+            } @else {
+                margin-left: $gutter_width;
+            }
+            float: left;
+            width: $width;
+      	}
+
+      	.m-c#{$i}.full {
+	        width: $page_width / $columns_amount * $i;
+	        margin-left: 0;
+	    }
+
+    } // end @media all and (min-width: 768px)
+
+}
+
+@for $i from 1 through $columns_amount {
+
+	$width: ($column_width * $i - $gutter_width) + ($gutter_width * $i);
+  	$cols_per_row: $columns_amount / $i; // ex. 12 / 3 = 4
+  	$full_col: $width + ($gutter_width / $cols_per_row) * $cols_per_row - 1;
+
+	@media all and (min-width: 1030px) {
+		.l-c#{$i} {
+            @if $i == $columns_amount {
+                margin-left: 0;
+            } @else {
+                margin-left: $gutter_width;
+            }
+            float: left;
+            width: $width;
+      	}
+      	.l-c#{$i}.full {
+          	width: $page_width / $columns_amount * $i;
+          	margin-left: 0;
+      	}
+
+    } // end @media all and (min-width: 1030px)
+
+}
+
+// MARGIN, PADDING & ROW
+
+.m { margin: $margin; }
+.mt { margin-top: $margin; }
+.mb { margin-bottom: $margin; }
+.ml { margin-left: $margin; }
+.mr { margin-right: $margin; }
+
+.p { padding: $padding;}
+.pt { padding-top: $padding; }
+.pb { padding-bottom: $padding; }
+.pl { padding-left: $padding; }
+.pr { padding-right: $padding; }
+
+.r { height: $row_height; }
+
+.lh { line-height: $row_height; }
+
+@for $i from 0 through 24 {
+
+	@if $i == 0 {
+
+		.r#{$i} { height: 0; }
+	    .lh#{$i} { line-height: 0; }
+
+	    .m#{$i} { margin-: 0; }
+	    .mt#{$i} { margin-top: 0; }
+	    .mb#{$i} { margin-bottom: 0; }
+	    .ml#{$i} { margin-left: 0; }
+	    .mr#{$i} { margin-right: 0; }
+
+	    .p#{$i} { padding: 0; }
+	    .pt#{$i} { padding-top: 0; }
+	    .pb#{$i} { padding-bottom: 0; }
+	    .pl#{$i} { padding-left: 0; }
+	    .pr#{$i} { padding-right: 0; }
+
+	} @else {
+
+		.r#{$i} { min-height: ($row_height * $i) + ($margin * ($i - 1)); }
+	    .lh#{$i} { line-height: $row_height * $i; }
+
+	    .m#{$i} { margin: $margin * $i; }
+	    .mt#{$i} { margin-top: $margin * $i; }
+	    .mb#{$i} { margin-bottom: $margin * $i; }
+	    .ml#{$i} { margin-left: $margin * $i; }
+	    .mr#{$i} { margin-right: $margin * $i; }
+
+	    .p#{$i} { padding: $margin * $i; }
+	    .pt#{$i} { padding-top: $margin * $i; }
+	    .pb#{$i} { padding-bottom: $margin * $i; }
+	    .pl#{$i} { padding-left: $margin * $i; }
+	    .pr#{$i} { padding-right: $margin * $i; }
+
+	}
+}

@@ -1,1 +1,0 @@
-$(document).ready(function(){setTimeout(function(){$("#me").removeClass("spin")},1e3);$("#me").hover(function(){$(this).addClass("spin")},function(){$("#me").removeClass("spin")})});

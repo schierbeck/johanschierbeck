@@ -1,0 +1,29 @@
+/* =================================================================================================
+STYLE (style.scss)
+================================================================================================= */
+
+@import "settings"; 		// Settings
+@import "font-awesome";		// Font Awsome
+@import "mixins";			// Mixins
+@import "grid";				// Grid layout
+@import "default-styles";	// Default styling for margin, padding, forms etc
+@import "ie";				// Styling for Internet Explorer
+@import "reset"; 			// Reset browsers default styling
+
+// Extra small - Example: <div class="xsmall-c6"></div>
+@import "480less";
+
+// Small - Example: <div class="small-c6"></div>
+@media only screen and (min-width: 481px) {
+	@import "481up";
+}
+
+// Medium - Example: <div class="medium-c6"></div>
+@media only screen and (min-width: 768px) {
+	@import "768up";
+}
+
+// Large - Example: <div class="large-c6"></div>
+@media only screen and (min-width: 1030px) {
+	@import "1030up";
+}
