@@ -13,7 +13,7 @@
 
   	<!-- Page info
 	////////////////////////////// -->
-  	<title>Strapinsky (beta)</title>
+  	<title>Mina sällskapsspel</title>
   	<meta name="description" content="">
 	<meta name="keywords" content="">
 	<link rel="canonical" href="">
